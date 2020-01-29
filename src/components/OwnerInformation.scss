@@ -1,0 +1,62 @@
+$mainColor: #d1dff3;
+$secondaryColor: #dfeaf9;
+$thirdColor: #44689e;
+
+$borderColor: #a3abb6;
+$borderColorUnactive: #bdc7d4;
+
+$fontColor: #1b1b1b;
+$fontColorAlternative: #a1b5b1;
+
+.owner-information {
+  width: 100%;
+  border-bottom: 1px solid $borderColor;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas:
+    "avatar name"
+    "avatar id"
+    "avatar location";
+  min-width: 171px;
+}
+
+.owner-avatar {
+  padding: 10px;
+  grid-area: avatar;
+  width: 150px;
+}
+
+.owner-name {
+  padding-top: 10px;
+  grid-area: name;
+  font-weight: 600;
+}
+
+.owner-id {
+  grid-area: id;
+  color: $borderColor;
+  font-size: 0.7em;
+}
+
+.owner-location {
+  grid-area: location;
+  font-size: 0.8em;
+}
+
+@media all and(max-width: 450px) {
+  .owner-information {
+    grid-template-columns: 120px 1fr;
+  }
+  .owner-avatar {
+    width: 100px;
+  }
+}
+
+@media all and(max-width: 360px) {
+  .owner-information {
+    grid-template-columns: 95px 1fr;
+  }
+  .owner-avatar {
+    width: 75px;
+  }
+}

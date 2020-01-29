@@ -1,0 +1,16 @@
+$mainColor: #d1dff3;
+$secondaryColor: #dfeaf9;
+$thirdColor: #44689e;
+
+$borderColor: #a3abb6;
+$borderColorUnactive: #bdc7d4;
+
+$fontColor: #1b1b1b;
+$fontColorAlternative: #a1b5b1;
+
+.newsfeed {
+  border-right: 1px solid $borderColor;
+  background: $secondaryColor;
+  overflow: hidden;
+  overflow-y: scroll;
+}

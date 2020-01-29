@@ -1,0 +1,57 @@
+$mainColor: #d1dff3;
+$secondaryColor: #dfeaf9;
+$thirdColor: #44689e;
+
+$borderColor: #a3abb6;
+$borderColorUnactive: #bdc7d4;
+
+$fontColor: #1b1b1b;
+$fontColorAlternative: #a1b5b1;
+
+.post-exemplar {
+  padding-top: 10px;
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  border-bottom: 1px solid $borderColor;
+  display: grid;
+  grid-template-areas:
+    "image name"
+    "image date"
+    "text text";
+  grid-template-columns: 64px minmax(auto, 100%);
+  grid-auto-rows: 27px 27px auto;
+}
+
+.post-image {
+  margin-left: 10px;
+  grid-area: image;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+}
+
+.post-name {
+  grid-area: name;
+  margin-left: 10px;
+  font-size: 0.9em;
+
+  &:hover {
+    text-decoration: underline;
+    color: $thirdColor;
+    cursor: pointer;
+  }
+}
+
+.post-date {
+  grid-area: date;
+  margin-left: 10px;
+  font-size: 0.6em;
+}
+
+.post-text {
+  grid-area: text;
+  margin: 10px;
+  padding: 0px;
+  font-size: 0.8em;
+}

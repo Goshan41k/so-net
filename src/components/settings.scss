@@ -1,0 +1,86 @@
+$mainColor: #d1dff3;
+$secondaryColor: #dfeaf9;
+$thirdColor: #44689e;
+
+$borderColor: #a3abb6;
+$borderColorUnactive: #bdc7d4;
+
+$fontColor: #1b1b1b;
+$fontColor2: #666666;
+$fontColorAlternative: #a1b5b1;
+
+.settings {
+  border-right: 1px solid $borderColor;
+  background: $secondaryColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    height: 60px;
+    border-bottom: 1px solid $borderColor;
+  }
+  &-section {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+    grid-auto-flow: minmax(100px, 200px);
+  }
+  &-label {
+    font-size: 0.6em;
+    margin-top: 20px;
+    margin-right: 10px;
+    text-align: right;
+    color: $fontColor2;
+  }
+  &-input {
+    font-size: 0.8em;
+    margin-top: 20px;
+    margin-left: 10px;
+    min-width: 170px;
+    width: 50%;
+    height: 1.5em;
+    background: $mainColor;
+    border: 1px solid $borderColorUnactive;
+    border-radius: 2px;
+    margin-top: 15px;
+    &:focus {
+      border: 1px solid $borderColor;
+    }
+  }
+  &-input-file {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 0.8em;
+    background: none;
+    border: none;
+    margin-top: 15px;
+  }
+  &-hr {
+    width: 90%;
+    border: none;
+    height: 1px;
+    background: $borderColor;
+  }
+  &-button {
+    min-width: 170px;
+    width: 40%;
+    height: 32px;
+    font-size: 0.8em;
+    font-weight: 600;
+    line-height: 0.8em;
+    border: none;
+    background: $thirdColor;
+    color: $secondaryColor;
+    border-radius: 4px;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 4px $thirdColor;
+    }
+  }
+}

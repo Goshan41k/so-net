@@ -1,0 +1,51 @@
+$mainColor: #d1dff3;
+$secondaryColor: #dfeaf9;
+$thirdColor: #44689e;
+
+$borderColor: #a3abb6;
+$borderColorUnactive: #bdc7d4;
+
+$fontColor: #1b1b1b;
+$fontColorAlternative: #a1b5b1;
+
+.sending-form {
+  width: 100%;
+  border-bottom: 1px solid $borderColor;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.sending-textarea {
+  margin: 10px;
+  height: 100px;
+  resize: none;
+  width: 96%;
+  background: $mainColor;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+  font-size: 0.8em;
+  line-height: 1em;
+  padding: 5px;
+}
+
+.sending-button {
+  user-select: none;
+  height: 32px;
+  width: 96px;
+  border: none;
+  background: none;
+  margin: 10px;
+  margin-top: 0px;
+  background: $thirdColor;
+  color: $secondaryColor;
+  font-weight: 600;
+  &:hover {
+    box-shadow: 0px 0px 6px $thirdColor;
+    cursor: pointer;
+  }
+  &:disabled {
+    opacity: 0.5;
+    z-index: 0;
+  }
+}
