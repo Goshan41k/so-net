@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import store from "../store";
 import firebaseAPI from "../firebase/firebase";
 import "./sendingForm.scss";
+import Swal from "sweetalert2";
 import { getCurrentDate } from "../helpers";
 
 const SendingForm = () => {
   const [postText, setPostText] = useState("");
+  const currentUser = store.getState().currentUserReducer.currentUser;
 
   const onChangeHandler = e => {
     e.preventDefault();
@@ -17,7 +19,10 @@ const SendingForm = () => {
   };
 
   const sendPost = () => {
-    const currentUser = store.getState().currentUserReducer.currentUser;
+    if (currentUser === null) {
+      Swal.fire("Log in to send post!", "", "error");
+      return;
+    }
     const post = {
       authorUid: currentUser.uid,
       authorId: currentUser.id,

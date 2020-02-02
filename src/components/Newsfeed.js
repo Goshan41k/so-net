@@ -12,15 +12,7 @@ const Newsfeed = () => {
       .getState()
       .newsfeedReducer.postsData.map(post => {
         id++;
-        return (
-          <PostExemplar
-            key={id}
-            authorId={post.authorId}
-            author={post.authorName}
-            date={post.postDate}
-            text={post.postText}
-          />
-        );
+        return <PostExemplar key={id} post={post} />;
       })
       .reverse();
   }

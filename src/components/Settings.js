@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
+import { useHistory } from "react-router-dom";
 import Loader from "../components/Loader";
 import firebaseAPI from "../firebase/firebase";
 import store from "../store";
@@ -21,6 +23,7 @@ const SettingRecord = ({ recordName, defaultValue, changer }) => {
 };
 
 const Settings = () => {
+  let history = useHistory();
   const [name, nameChange] = useState("");
   const [surname, surnameChange] = useState("");
   const [country, countryChange] = useState("");
@@ -38,6 +41,11 @@ const Settings = () => {
       .database()
       .ref("users/" + currentUser.uid)
       .update(user);
+    store.dispatch({ type: "FETCH_CURRENT_USER" });
+    Swal.fire("The changes are saved");
+    setTimeout(() => {
+      history.push("/feed");
+    }, 2000);
   };
 
   const changeAvatar = e => {

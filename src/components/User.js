@@ -14,21 +14,13 @@ const User = () => {
       .filter(post => post.authorId.toString() === pathname)
       .map(post => {
         id++;
-        return (
-          <PostExemplar
-            key={id}
-            authorId={post.authorId}
-            author={post.authorName}
-            date={post.postDate}
-            text={post.postText}
-          />
-        );
+        return <PostExemplar key={id} post={post} />;
       });
   }
 
   return (
     <div className="user">
-      <OwnerInformation />
+      <OwnerInformation ownerId={pathname} />
       {newsfeed}
     </div>
   );

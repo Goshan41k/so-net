@@ -37,6 +37,7 @@ const Home = () => {
     <div className="home-page">
       <Route path="/" component={Navigator} />
       <Route path={pagesArray} component={User} />
+      <Route path="/home" component={User} />
       <Route path="/feed" component={Newsfeed} />
       <Route path="/settings" component={Settings} />
     </div>
